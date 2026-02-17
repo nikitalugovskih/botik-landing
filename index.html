@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Landing (Placeholder)</title>
+    <!-- <title>Карманный компаньон ✨</title> -->
+    <title>Карманный компаньон</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,233 +17,305 @@
   <body>
     <div class="page">
       <header class="nav">
-        <div class="logo">BOTIK</div>
+        <a class="brand-link" href="/" aria-label="Перейти на главную">
+          <img class="brand-logo" src="/brand-logo.png" alt="Карманный компаньон" />
+          <span class="brand-text">Карманный компаньон</span>
+        </a>
         <nav class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#how">How it works</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
+          <a href="/#how">Как это работает</a>
+          <a href="/#pricing">Тарифы</a>
+          <a href="/#faq">Вопросы</a>
+          <a href="/review">Оставить отзыв</a>
         </nav>
-        <button class="ghost-btn">Try demo</button>
+        <a
+          class="ghost-btn"
+          href="https://t.me/Ru_pocket_psy_bot"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Открыть бота
+        </a>
       </header>
 
       <main>
         <section class="hero">
           <div class="hero-content">
-            <p class="eyebrow reveal delay-1">Placeholder subtitle</p>
-            <h1 class="reveal delay-2">A bold placeholder headline that feels human</h1>
+            <h1 class="reveal delay-2">Карманный собеседник, который помогает спокойно разобраться в себе</h1>
             <p class="lead reveal delay-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat
-              nisl quis est posuere, ac malesuada lacus pulvinar. Donec feugiat lacus
-              nec arcu commodo.
+              Со мной можно обсудить любую жизненную ситуацию. Я не осуждаю и стараюсь
+              помочь тебе посмотреть на происходящее спокойнее и яснее.
             </p>
             <div class="hero-actions reveal delay-4">
-              <button class="primary-btn">Primary CTA</button>
-              <button class="secondary-btn">Secondary action</button>
+              <a
+                class="primary-btn"
+                href="https://t.me/Ru_pocket_psy_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Перейти к боту
+              </a>
+              <a class="secondary-btn" href="#pricing">Посмотреть тарифы</a>
             </div>
-            <p class="note reveal delay-5">Short supporting line with placeholder copy.</p>
+            <p class="note reveal delay-5">Работает прямо в Telegram, без сложной настройки.</p>
           </div>
           <div class="hero-visual">
             <div class="orb" aria-hidden="true"></div>
             <div class="card stack reveal delay-3">
-              <div class="card-tag">New</div>
-              <h3>Placeholder card title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <div class="card-tag">Всегда рядом</div>
+              <h3>О чем можно поговорить</h3>
+              <p>Тревога, отношения, стресс, усталость, сложные решения или просто тяжелый день.</p>
               <div class="pill-row">
-                <span class="pill">Tag one</span>
-                <span class="pill">Tag two</span>
-                <span class="pill">Tag three</span>
+                <span class="pill">Без осуждения</span>
+                <span class="pill">В удобное время</span>
+                <span class="pill">В Telegram</span>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="logo-strip">
-          <p>Trusted by placeholder teams</p>
-          <div class="logo-row">
-            <span>Alpha</span>
-            <span>Studio</span>
-            <span>North</span>
-            <span>Echo</span>
-            <span>Vista</span>
-          </div>
-        </section>
-
-        <section id="features" class="features">
-          <div class="section-head">
-            <h2>Features with placeholder copy</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <div class="icon">01</div>
-              <h3>Feature headline</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                porttitor lorem non sapien dignissim.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="icon">02</div>
-              <h3>Another feature</h3>
-              <p>
-                Praesent blandit massa at sem pretium, at iaculis sapien tempor.
-                Curabitur pretium ex.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="icon">03</div>
-              <h3>Third feature</h3>
-              <p>
-                Nulla facilisi. Aenean id malesuada odio. Donec posuere, lorem sit
-                amet ultricies.
-              </p>
-            </article>
-          </div>
-        </section>
-
         <section id="how" class="how">
           <div class="section-head">
-            <h2>How it works (placeholder)</h2>
-            <p>Short description with lorem ipsum copy.</p>
+            <h2>Как начать</h2>
+            <p>Всего три шага, чтобы перейти к диалогу.</p>
           </div>
           <div class="steps">
             <div class="step">
-              <span class="step-number">Step 1</span>
-              <h3>First step title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <span class="step-number">Шаг 1</span>
+              <h3>Открой бота</h3>
+              <p>Нажми на кнопку «Перейти к боту» и запусти чат в Telegram.</p>
+              <a
+                class="primary-btn"
+                href="https://t.me/Ru_pocket_psy_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Перейти к боту
+              </a>
             </div>
             <div class="step">
-              <span class="step-number">Step 2</span>
-              <h3>Second step title</h3>
-              <p>Fusce viverra, nibh in aliquet lacinia, lectus turpis tempus.</p>
+              <span class="step-number">Шаг 2</span>
+              <h3>Опиши ситуацию</h3>
+              <p>Напиши, что беспокоит, даже если пока сложно подобрать точные слова.</p>
             </div>
             <div class="step">
-              <span class="step-number">Step 3</span>
-              <h3>Third step title</h3>
-              <p>Curabitur ut nisi at orci efficitur volutpat vel at lacus.</p>
+              <span class="step-number">Шаг 3</span>
+              <h3>Разбери все по шагам</h3>
+              <p>Получи спокойный отклик, уточняющие вопросы и поддержку в разговоре.</p>
             </div>
           </div>
         </section>
 
         <section class="stats">
           <div class="stat">
-            <h3>87%</h3>
-            <p>Placeholder impact metric</p>
+            <h3>Telegram</h3>
+            <p>Работает в привычном приложении</p>
           </div>
           <div class="stat">
             <h3>24/7</h3>
-            <p>Always-on support copy</p>
+            <p>Можно написать в любое время</p>
           </div>
           <div class="stat">
-            <h3>3 min</h3>
-            <p>Average setup time</p>
+            <h3>1 сообщение</h3>
+            <p>Достаточно, чтобы начать диалог</p>
           </div>
         </section>
 
         <section class="testimonials">
           <div class="section-head">
-            <h2>What people say (placeholder)</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Отзывы</h2>
+            <p>Нейтральная обратная связь от пользователей.</p>
           </div>
           <div class="testimonial-grid">
             <article class="testimonial">
               <p>
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                lobortis ligula ut leo ultricies.”
+                “После нескольких сообщений стало спокойнее, смогла собраться и принять
+                решение.”
               </p>
-              <span>Person A — Role</span>
+              <span>Пользователь бота</span>
             </article>
             <article class="testimonial">
               <p>
-                “Morbi facilisis semper massa, in commodo erat luctus sed. Nulla
-                convallis ex.”
+                “Удобно, что можно написать ночью и разложить мысли, когда не получается
+                уснуть.”
               </p>
-              <span>Person B — Role</span>
+              <span>Пользователь бота</span>
             </article>
             <article class="testimonial">
               <p>
-                “Integer ornare, felis sed dictum tincidunt, neque ante viverra
-                purus.”
+                “Нравится, что диалог спокойный и без давления. Можно говорить о личном
+                в своем темпе.”
               </p>
-              <span>Person C — Role</span>
+              <span>Пользователь бота</span>
             </article>
           </div>
         </section>
 
         <section id="pricing" class="pricing">
           <div class="section-head">
-            <h2>Pricing (placeholder)</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Тарифы</h2>
+            <p>Можно начать бесплатно и при желании перейти на Premium.</p>
           </div>
           <div class="pricing-grid">
             <article class="price-card">
-              <h3>Starter</h3>
-              <p class="price">$9</p>
+              <h3>Base</h3>
+              <p class="price">0 ₽</p>
               <ul>
-                <li>Lorem ipsum</li>
-                <li>Placeholder line</li>
-                <li>Another point</li>
+                <li>5 сообщений в день</li>
+                <li>5 голосовых сообщений в день</li>
+                <li>Доступ к основным функциям</li>
+                <li>Знакомство с ботом без оплаты</li>
               </ul>
-              <button class="secondary-btn">Choose plan</button>
+              <a
+                class="primary-btn"
+                href="https://t.me/Ru_pocket_psy_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Начать бесплатно
+              </a>
             </article>
             <article class="price-card featured">
-              <div class="card-tag">Popular</div>
-              <h3>Pro</h3>
-              <p class="price">$29</p>
+              <div class="price-badge">Самый популярный выбор</div>
+              <h3>Premium</h3>
+              <p class="price">299 ₽</p>
               <ul>
-                <li>Lorem ipsum</li>
-                <li>Placeholder line</li>
-                <li>Another point</li>
-                <li>Extra benefit</li>
+                <li>Безлимитные сообщения</li>
+                <li>Голосовые сообщения без ограничений</li>
+                <li>Приоритетная скорость</li>
+                <li>Поддержка развития бота</li>
               </ul>
-              <button class="primary-btn">Choose plan</button>
-            </article>
-            <article class="price-card">
-              <h3>Team</h3>
-              <p class="price">$79</p>
-              <ul>
-                <li>Lorem ipsum</li>
-                <li>Placeholder line</li>
-                <li>Another point</li>
-              </ul>
-              <button class="secondary-btn">Choose plan</button>
+              <div class="note">
+                Оплата картой — 299 ₽ или Telegram Stars — 299
+              </div>
+              <a
+                class="primary-btn"
+                href="https://t.me/Ru_pocket_psy_bot?start=premium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Оплатить в Telegram
+              </a>
             </article>
           </div>
         </section>
 
         <section id="faq" class="faq">
           <div class="section-head">
-            <h2>FAQ (placeholder)</h2>
-            <p>Short intro with lorem ipsum copy.</p>
+            <h2>Вопросы и ответы</h2>
+            <p>Коротко о том, как работает бот и что внутри подписки.</p>
           </div>
           <div class="faq-grid">
-            <details open>
-              <summary>Question placeholder one</summary>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <details>
+              <summary>❇️ Как я вообще работаю?</summary>
+              <p>Привет. Я работаю как бережный собеседник в Telegram.</p>
+              <p>
+                Я — дружелюбный чат-бот и собеседник, который всегда рядом, когда хочется
+                выговориться, разложить мысли по полочкам или просто поговорить. Я умею
+                поддерживать диалог, задавать уточняющие вопросы и помогать смотреть на
+                ситуацию под разными углами.
+              </p>
+              <p>
+                Во время общения я стараюсь вникнуть в то, что с тобой происходит: уточняю
+                детали, размышляю вместе с тобой, предлагаю идеи и варианты, которые могут
+                помочь именно в твоей ситуации. Мои ответы не заготовлены заранее — каждый
+                раз они формируются под твой запрос и твои слова.
+              </p>
+              <p>
+                Я могу помочь немного выдохнуть, успокоиться, навести порядок в голове и
+                найти более спокойное состояние 😌
+              </p>
+              <p>
+                Можешь писать о чём угодно: о переживаниях, сомнениях, стрессе, сложных
+                решениях, тревоге, упадке настроения или просто когда хочется, чтобы тебя
+                кто-то выслушал.
+              </p>
+              <p>
+                Моя задача — быть рядом, поддержать разговор и помочь тебе лучше понять
+                себя и то, что происходит.
+              </p>
             </details>
             <details>
-              <summary>Question placeholder two</summary>
-              <p>Sed dignissim, justo in sollicitudin aliquet, sem urna.</p>
+              <summary>❇️ Мои сообщения — это конфиденциально?</summary>
+              <p>Да. Конфиденциальность — базовое правило.</p>
+              <p>
+                Всё, что ты мне пишешь, остаётся только в рамках твоего Telegram-аккаунта.
+                Никто посторонний не имеет доступа к переписке.
+              </p>
             </details>
             <details>
-              <summary>Question placeholder three</summary>
-              <p>Donec vitae nulla ut sapien bibendum dictum.</p>
+              <summary>❇️ Могу ли я заменить психолога?</summary>
+              <p>Я — не психолог и не врач.</p>
+              <p>
+                Я подойду как поддержка и «первая точка опоры»: когда нужно поговорить,
+                выговориться, получить внимание и идеи для размышлений.
+              </p>
+              <p>
+                Если ты сталкиваешься с действительно тяжёлыми состояниями или серьёзными
+                проблемами, лучше обратиться к живому специалисту — психологу или
+                психотерапевту.
+              </p>
             </details>
             <details>
-              <summary>Question placeholder four</summary>
-              <p>Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+              <summary>❇️ Что даёт Premium-подписка?</summary>
+              <p>
+                Premium открывает общение без ограничений по количеству сообщений и
+                возможность отправлять голосовые сообщения.
+              </p>
+              <p>
+                С подпиской ты можешь писать мне в любое время — днём, ночью, когда удобно.
+                А ещё так ты поддерживаешь развитие бота, помогая ему становиться полезнее
+                и лучше 💛
+              </p>
+            </details>
+            <details>
+              <summary>❇️ Куда писать, если есть вопросы по работе бота?</summary>
+              <p>
+                Если заметил ошибку, есть идеи, пожелания или вопросы — всегда можно
+                написать в поддержку:
+              </p>
+              <p>
+                <a href="https://t.me/Psy_pocket_support" target="_blank" rel="noopener noreferrer">
+                  👉 @Psy_pocket_support
+                </a>
+              </p>
+            </details>
+            <details>
+              <summary>❇️ Подписка продлевается автоматически?</summary>
+              <p>
+                Да, подписка продлевается автоматически. Оплата списывается за день до
+                окончания текущего периода.
+              </p>
+              <p>Автопродление можно отключить в любой момент:</p>
+              <p>Личный кабинет → Отменить подписку</p>
+            </details>
+            <details>
+              <summary>❇️ Как отменить подписку?</summary>
+              <p>Зайди в личный кабинет и нажми кнопку «Отменить подписку».</p>
             </details>
           </div>
         </section>
 
         <section class="cta">
           <div class="cta-card">
-            <h2>Final CTA with placeholder copy</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h2>Готов начать диалог?</h2>
+            <p>Открой бота в Telegram и напиши первое сообщение в удобный момент.</p>
             <div class="hero-actions">
-              <button class="primary-btn">Primary CTA</button>
-              <button class="ghost-btn">Talk to us</button>
+              <a
+                class="primary-btn"
+                href="https://t.me/Ru_pocket_psy_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Перейти к боту
+              </a>
+              <a
+                class="ghost-btn"
+                href="https://t.me/Ru_pocket_psy_bot?start=premium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Оформить Premium
+              </a>
             </div>
           </div>
         </section>
@@ -249,15 +323,38 @@
 
       <footer class="footer">
         <div>
-          <div class="logo">BOTIK</div>
-          <p>Short footer line with placeholder copy.</p>
+          <div class="logo">Карманный компаньон ✨</div>
+          <p>Спокойный чат-бот поддержки в Telegram.</p>
         </div>
         <div class="footer-links">
-          <a href="#">Placeholder link</a>
-          <a href="#">Another link</a>
-          <a href="#">Docs</a>
+          <a href="https://t.me/Ru_pocket_psy_bot" target="_blank" rel="noopener noreferrer">
+            Открыть бота
+          </a>
+          <a
+            href="https://t.me/Ru_pocket_psy_bot?start=premium"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Premium
+          </a>
+          <a href="https://t.me/Psy_pocket_support" target="_blank" rel="noopener noreferrer">
+            Поддержка
+          </a>
         </div>
       </footer>
     </div>
+    <script>
+      const faqItems = document.querySelectorAll(".faq-grid details");
+      faqItems.forEach((item) => {
+        item.addEventListener("toggle", () => {
+          if (!item.open) return;
+          faqItems.forEach((other) => {
+            if (other !== item) {
+              other.removeAttribute("open");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

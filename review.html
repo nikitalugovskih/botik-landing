@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Оставить отзыв | Ru Pocket Psy Bot</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.recaptcha.net/recaptcha/api.js?hl=ru" async defer></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="nav">
+        <a class="brand-link" href="/" aria-label="Перейти на главную">
+          <img class="brand-logo" src="/brand-logo.png" alt="Карманный компаньон" />
+          <span class="brand-text">Карманный компаньон</span>
+        </a>
+        <nav class="nav-links">
+          <a href="/">Главная</a>
+          <a href="/#how">Как это работает</a>
+          <a href="/#pricing">Тарифы</a>
+          <a href="/#faq">Вопросы</a>
+          <a href="/review">Оставить отзыв</a>
+        </nav>
+        <a
+          class="ghost-btn"
+          href="https://t.me/Ru_pocket_psy_bot"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Открыть бота
+        </a>
+      </header>
+
+      <main>
+        <section class="feedback">
+          <div class="section-head">
+            <h2>Оставить отзыв</h2>
+            <p>Поделись впечатлением о боте, это помогает улучшать сервис.</p>
+          </div>
+          <form
+            id="feedback-form"
+            class="feedback-form"
+            action="https://formsubmit.co/ajax/mikitalugovskih@gmail.com"
+            method="post"
+          >
+            <input type="hidden" name="_subject" value="Новый отзыв о Ru Pocket Psy Bot" />
+            <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+            <label for="feedback-email">Почта</label>
+            <input
+              id="feedback-email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <label for="feedback-title">Тайтл отзыва</label>
+            <input
+              id="feedback-title"
+              name="title"
+              type="text"
+              placeholder="Короткий заголовок"
+              required
+            />
+
+            <label for="feedback-text">Сам отзыв</label>
+            <textarea
+              id="feedback-text"
+              name="feedback"
+              rows="6"
+              placeholder="Напиши, что понравилось или что можно улучшить"
+              required
+            ></textarea>
+
+            <div class="captcha-wrap">
+              <div class="g-recaptcha" data-sitekey="__RECAPTCHA_SITE_KEY__"></div>
+            </div>
+
+            <button class="primary-btn" type="submit">Отправить</button>
+            <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <div class="logo">Карманный компаньон ✨</div>
+          <p>Спокойный чат-бот поддержки в Telegram.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/">Главная</a>
+          <a href="https://t.me/Ru_pocket_psy_bot" target="_blank" rel="noopener noreferrer">
+            Открыть бота
+          </a>
+          <a href="https://t.me/Psy_pocket_support" target="_blank" rel="noopener noreferrer">
+            Поддержка
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const feedbackForm = document.querySelector("#feedback-form");
+      const feedbackStatus = document.querySelector("#feedback-status");
+
+      if (feedbackForm && feedbackStatus) {
+        const submitButton = feedbackForm.querySelector('button[type="submit"]');
+        const captchaNode = feedbackForm.querySelector(".g-recaptcha");
+        const siteKey = captchaNode ? captchaNode.getAttribute("data-sitekey") || "" : "";
+
+        if (!siteKey) {
+          feedbackStatus.textContent =
+            "Site key не задан. Добавь RECAPTCHA_SITE_KEY в .env и перезапусти сервер.";
+          feedbackStatus.classList.add("is-error");
+          if (submitButton) {
+            submitButton.disabled = true;
+          }
+        }
+
+        feedbackForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          const hasRecaptcha = typeof window.grecaptcha !== "undefined";
+          const captchaToken = hasRecaptcha ? window.grecaptcha.getResponse() : "";
+
+          if (!hasRecaptcha) {
+            feedbackStatus.textContent = "Капча не загрузилась. Обнови страницу и попробуй снова.";
+            feedbackStatus.classList.remove("is-success");
+            feedbackStatus.classList.add("is-error");
+            return;
+          }
+
+          if (!captchaToken) {
+            feedbackStatus.textContent = "Подтверди капчу, чтобы отправить отзыв.";
+            feedbackStatus.classList.remove("is-success");
+            feedbackStatus.classList.add("is-error");
+            return;
+          }
+
+          const formData = new FormData(feedbackForm);
+          formData.append("g-recaptcha-response", captchaToken);
+
+          feedbackStatus.textContent = "Отправляем отзыв...";
+          feedbackStatus.classList.remove("is-success", "is-error");
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Отправка...";
+          }
+
+          try {
+            const response = await fetch(feedbackForm.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (!response.ok) {
+              throw new Error("request_failed");
+            }
+
+            feedbackForm.reset();
+            feedbackStatus.textContent = "Спасибо! Отзыв отправлен.";
+            feedbackStatus.classList.add("is-success");
+          } catch (error) {
+            feedbackStatus.textContent = "Не получилось отправить. Попробуй еще раз.";
+            feedbackStatus.classList.add("is-error");
+          } finally {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = "Отправить";
+            }
+            if (typeof window.grecaptcha !== "undefined") {
+              window.grecaptcha.reset();
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
