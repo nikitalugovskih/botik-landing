@@ -1,10 +1,7 @@
-FROM python:3.11-slim
+FROM nginx:alpine
 
-WORKDIR /app
+RUN apk add --no-cache gettext
 
-COPY . .
+COPY site /usr/share/nginx/html
 
-EXPOSE 8000
-
-CMD ["python", "main.py"]
-
+CMD sh -c "envsubst < /usr/share/nginx/html/review.template.html > /usr/share/nginx/html/review.html && nginx -g 'daemon off;'"
